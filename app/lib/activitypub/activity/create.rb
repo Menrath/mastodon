@@ -372,7 +372,7 @@ class ActivityPub::Activity::Create < ActivityPub::Activity
   end
 
   def converted_text
-    title = "<h2>#{status.title}</h2>" if status.title.present?
+    title = "<p><strong>#{status.title}</strong></p>" if status.title.present?
     [title, @status_parser.spoiler_text.presence, linkify(@status_parser.url || @status_parser.uri)].compact.join("\n\n"))
   end
 
